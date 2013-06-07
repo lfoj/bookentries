@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nazwa:</b>
+  <%= @status.user.full_name %>
+</p>
+
+<p>
+  <b>Wpis:</b>
+  <%= @status.content%>
+</p>
+
+
+<%= link_to 'Edytuj', edit_status_path(@status) %> |
+<%= link_to 'Cofnij', statuses_path %>

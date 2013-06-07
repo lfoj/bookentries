@@ -1,0 +1,19 @@
+<div class="page-header">
+  <h1>Wszystkie wpisy</h1>
+</div>
+
+<%= link_to "Dodaj nowy wpis", new_status_path, class: "btn btn-success" %>
+
+<% @statuses.each do |status| %>
+<div class="status">
+  <strong><%= status.user.full_name %></strong>
+  <p><%= status.content %></p>
+  <div class="meta">
+    <%= link_to time_ago_in_words(status.created_at) + " ago", status %> 
+    <span class="admin">
+      | <%= link_to "Edytuj", edit_status_path(status) %> | 
+      <%= link_to "Usuń", status, method: :delete, data: { confirm: "Jesteś pewien czy chcesz usunąć ten wpis?"} %>
+    </span>
+  </div>
+</div>
+<% end %>
