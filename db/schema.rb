@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120724212023) do
 
   create_table "statuses", :force => true do |t|
-    t.text     "wpis"
+    t.text     "content"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "user_id"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(:version => 20120724212023) do
   add_index "statuses", ["user_id"], :name => "index_statuses_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "pierwsze_imie"
+    t.string   "first_name"
     t.string   "last_name"
     t.string   "profile_name"
     t.string   "email",                  :default => "", :null => false
